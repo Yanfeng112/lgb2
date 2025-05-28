@@ -54,13 +54,11 @@ if st.button("Predict"):
     probability = predicted_proba[predicted_class] * 100
 
     # 显示预测结果，使用 Matplotlib 渲染指定字体
-    text = f" f"基于气候、生态、地形和社会经济因素的综合评估，该地区内脏利什曼病传播风险概率为 {probability:.2f}%\n"
-        f"Based on integrated assessment of climatic, ecological, topographic and socio-economic factors, "
-        f"the risk probability of visceral leishmaniasis transmission is {probability:.2f}%"
+     text = f"Based on feature values, predicted possibility of AKI is {probability:.2f}%"
     fig, ax = plt.subplots(figsize=(8, 1))
     ax.text(
-        0.7, 0.7, text,
-        fontsize=15,
+        0.5, 0.5, text,
+        fontsize=16,
         ha='center', va='center',
         fontname='Times New Roman',
         transform=ax.transAxes
@@ -68,6 +66,7 @@ if st.button("Predict"):
     ax.axis('off')
     plt.savefig("prediction_text.png", bbox_inches='tight', dpi=300)
     st.image("prediction_text.png")
+
 
     # 计算 SHAP 值
     explainer = shap.TreeExplainer(model)
