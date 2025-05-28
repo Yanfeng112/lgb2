@@ -54,13 +54,13 @@ if st.button("Predict"):
     probability = predicted_proba[predicted_class] * 100
 
     # 显示预测结果，使用 Matplotlib 渲染指定字体
-    text = f"Based on the integrated assessment of climatic, ecological, topographic and socio-economic factor, 
-    the estimated risk probability of visceral leishmaniasis (kala-azar) transmission
-    in this region is {probability:.2f}%"
-    fig, ax = plt.subplots(figsize=(8, 3))
+    text = f" f"基于气候、生态、地形和社会经济因素的综合评估，该地区内脏利什曼病传播风险概率为 {probability:.2f}%\n"
+        f"Based on integrated assessment of climatic, ecological, topographic and socio-economic factors, "
+        f"the risk probability of visceral leishmaniasis transmission is {probability:.2f}%"
+    fig, ax = plt.subplots(figsize=(8, 1))
     ax.text(
-        3, 3, text,
-        fontsize=30,
+        0.7, 0.7, text,
+        fontsize=15,
         ha='center', va='center',
         fontname='Times New Roman',
         transform=ax.transAxes
